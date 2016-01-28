@@ -13,25 +13,39 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pve-H3-kqQ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-ZL-0w3">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1wK-ZL-0w3" secondAttribute="trailing" id="I4m-F6-fer"/>
+                                    <constraint firstItem="1wK-ZL-0w3" firstAttribute="top" secondItem="Pve-H3-kqQ" secondAttribute="top" id="NIu-zi-lo9"/>
+                                    <constraint firstAttribute="bottom" secondItem="1wK-ZL-0w3" secondAttribute="bottom" id="S0T-LL-ItG"/>
+                                    <constraint firstItem="1wK-ZL-0w3" firstAttribute="centerY" secondItem="Pve-H3-kqQ" secondAttribute="centerY" id="UYD-jm-hii"/>
+                                    <constraint firstItem="1wK-ZL-0w3" firstAttribute="leading" secondItem="Pve-H3-kqQ" secondAttribute="leading" id="Ujz-F5-X4i"/>
+                                    <constraint firstItem="1wK-ZL-0w3" firstAttribute="centerX" secondItem="Pve-H3-kqQ" secondAttribute="centerX" id="a4p-mI-IMP"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pve-H3-kqQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XSW-zC-69H"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pve-H3-kqQ" secondAttribute="bottom" id="bsl-yM-dxE"/>
-                            <constraint firstItem="Pve-H3-kqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="duB-O1-Plz"/>
-                            <constraint firstAttribute="trailing" secondItem="Pve-H3-kqQ" secondAttribute="trailing" id="px5-r1-jZq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pve-H3-kqQ" secondAttribute="bottom" id="9Iy-y0-vfG"/>
+                            <constraint firstAttribute="trailing" secondItem="Pve-H3-kqQ" secondAttribute="trailing" id="LLs-dB-dAb"/>
+                            <constraint firstItem="Pve-H3-kqQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aL9-Dr-MGJ"/>
+                            <constraint firstItem="Pve-H3-kqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sca-t5-8XL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FsA-Cr-8B4"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="imageView" destination="1wK-ZL-0w3" id="0a9-Gl-1SD"/>
                         <outlet property="scrollView" destination="Pve-H3-kqQ" id="YpF-SP-3Ve"/>
                     </connections>
                 </viewController>
