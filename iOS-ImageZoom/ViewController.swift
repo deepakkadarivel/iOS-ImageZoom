@@ -40,9 +40,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        self.dismissViewControllerAnimated(true, completion: nil)
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image
+        
+        scrollView.contentSize = image.size
+        
+        let scrollViewFrame = scrollView.frame
+        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
+        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
+        let minScale = min(scaleHeight, scaleWidth)
+        
+        scrollView.minimumZoomScale = minScale
+        scrollView.maximumZoomScale = 1
+        scrollView.zoomScale = minScale
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
